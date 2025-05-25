@@ -10,9 +10,26 @@ To write a C Program to find area of rectangle using pointer.
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+int main() {
+    float length, breadth, area;
+    float *ptrLength, *ptrBreadth;
+    ptrLength = &length;
+    ptrBreadth = &breadth;
+    scanf("%f", ptrLength);
+    printf("Enter the length of the rectangle: %.f\n",length);
+    scanf("%f", ptrBreadth);
+    printf("Enter the breadth of the rectangle: %.f\n",breadth);
+    area = (*ptrLength) * (*ptrBreadth);
+    printf("Area of the rectangle = %.2f\n", area);
+    return 0;
+}
 
+```
 ## OUTPUT
 		       	
+![m-1 (3)](https://github.com/user-attachments/assets/3a2ad47d-740f-4723-9016-5178ad3c469f)
 
 
 ## RESULT
@@ -34,9 +51,26 @@ To write a C Program to print 'WELCOME' using malloc() and free().
 6.	Stop the program.
 
 ## PROGRAM
-
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main() {
+    char *str;
+    str = (char *)malloc(8 * sizeof(char)); 
+    if (str == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+    strcpy(str, "WELCOME");
+    printf("%s\n", str);
+    free(str);
+    return 0;
+}
+```
 ## OUTPUT
 
+![m-2 (4)](https://github.com/user-attachments/assets/7f058483-999d-4fab-b31e-73858e24056e)
 
 
 ## RESULT
@@ -60,9 +94,29 @@ To write a C Program to store the student information and display it using struc
 4.	Stop the program.
 
 ## PROGRAM
-
+```
+#include <stdio.h>
+struct Student {
+    int rollNumber;
+    char name[50];
+    float marks;
+};
+int main() {
+    struct Student s;
+    scanf("%d", &s.rollNumber);
+    scanf(" %[^\n]", s.name);
+    scanf("%f", &s.marks);
+    printf("Student Information\n");
+    printf("Roll Number : %d\n", s.rollNumber);
+    printf("Name : %s\n", s.name);
+    printf("Marks : %.2f\n", s.marks);
+    return 0;
+}
+```
 
 ## OUTPUT
+
+![m-3 (4)](https://github.com/user-attachments/assets/e237fc43-cfc8-4b24-9544-a674d42a2bf6)
 
 
 ## RESULT
@@ -87,11 +141,44 @@ To write a C Program to read and store the data of 3 employees and calculate the
 5.	Stop the program.
 
 ## PROGRAM
-
+```
+#include <stdio.h>
+struct Employee {
+    int empId;
+    char name[50];
+    float basicSalary;
+    float hra;
+    float da;
+    float grossSalary;
+};
+int main() {
+    struct Employee emp[3];
+    for (int i = 0; i < 3; i++) {
+        scanf("%d", &emp[i].empId);
+        scanf(" %[^\n]", emp[i].name);
+        scanf("%f", &emp[i].basicSalary);
+        emp[i].hra = 0.20 * emp[i].basicSalary;
+        emp[i].da = 0.80 * emp[i].basicSalary;
+        emp[i].grossSalary = emp[i].basicSalary + emp[i].hra + emp[i].da;
+    }
+    printf("\nEmployee Salary Details\n");
+    for (int i = 0; i < 3; i++) {
+        printf("\nEmployee %d:\n", i + 1);
+        printf("ID           : %d\n", emp[i].empId);
+        printf("Name         : %s\n", emp[i].name);
+        printf("Basic Salary : %.2f\n", emp[i].basicSalary);
+        printf("HRA          : %.2f\n", emp[i].hra);
+        printf("DA           : %.2f\n", emp[i].da);
+        printf("Gross Salary : %.2f\n", emp[i].grossSalary);
+    }
+    return 0;
+}
+```
 
  ## OUTPUT
 
- 
+ ![m-4 (4)](https://github.com/user-attachments/assets/a1735706-51e0-43a5-b3fe-5bd49ad6581d)
+
 
 ## RESULT
 
@@ -134,11 +221,44 @@ Step 7: Output Loop (i = 0 to 1):
 Step 8: End the program.
 
 ## PROGRAM
-
+```
+#include <stdio.h>
+struct Employee {
+    int empId;
+    char name[50];
+    float basicSalary;
+    float hra;
+    float da;
+    float grossSalary;
+};
+int main() {
+    struct Employee emp[3];
+    for (int i = 0; i < 3; i++) {
+        scanf("%d", &emp[i].empId);
+        scanf(" %[^\n]", emp[i].name);
+        scanf("%f", &emp[i].basicSalary);
+        emp[i].hra = 0.20 * emp[i].basicSalary;
+        emp[i].da = 0.80 * emp[i].basicSalary;
+        emp[i].grossSalary = emp[i].basicSalary + emp[i].hra + emp[i].da;
+    }
+    printf("\nEmployee Salary Details\n");
+    for (int i = 0; i < 3; i++) {
+        printf("\nEmployee %d:\n", i + 1);
+        printf("ID           : %d\n", emp[i].empId);
+        printf("Name         : %s\n", emp[i].name);
+        printf("Basic Salary : %.2f\n", emp[i].basicSalary);
+        printf("HRA          : %.2f\n", emp[i].hra);
+        printf("DA           : %.2f\n", emp[i].da);
+        printf("Gross Salary : %.2f\n", emp[i].grossSalary);
+    }
+    return 0;
+}
+```
 
 ## OUTPUT
 
  
+![m-5 (5)](https://github.com/user-attachments/assets/3ab040fa-2c06-4214-b2f0-0d0cb2a09f75)
 
 ## RESULT
 
